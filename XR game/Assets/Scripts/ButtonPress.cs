@@ -6,13 +6,14 @@ public class ButtonPress : MonoBehaviour
 {
 
     [SerializeField] private float treshold = 0.1f;
-    [SerializeField] private float deadZone = 0.025f;
+    [SerializeField] private float deadZone = 0.1f;
 
     private bool isPressed;
     private Vector3 startPos;
     private ConfigurableJoint joint;
 
     public UnityEvent onPressed, onReleased;
+    public ButtonGame teleportManager;
 
     void Start(){
         startPos = transform.localPosition;
@@ -21,10 +22,12 @@ public class ButtonPress : MonoBehaviour
 
     void Update(){
 
-        if(!isPressed && GetValue() + treshold >= 1)
+        if(!isPressed && GetValue() >= 1 - treshold){
             Pressed();
-        if(isPressed && GetValue() + treshold <= 0)
+        }
+        if(isPressed && GetValue() <= deadZone + 0.05f){
             Released();
+        }
     }
 
     private float GetValue(){
@@ -33,17 +36,27 @@ public class ButtonPress : MonoBehaviour
         if(Mathf.Abs(value) < deadZone)
             value = 0;
 
+        //Debug.Log($"Button {gameObject.name} Value: {value}");
+
         return Mathf.Clamp(value, -1f, 1f);
     }
 
     private void Pressed(){
         isPressed = true;
         onPressed.Invoke();
+        Debug.Log($"Pressed: {gameObject.name} - Value: {GetValue()}");
+
+        if (teleportManager != null)
+        {
+        teleportManager.ButtonPressed(gameObject.name);
+        }
     }
 
     private void Released(){
         isPressed = false;
         onReleased.Invoke();
+        Debug.Log($"Released: {gameObject.name} - Value: {GetValue()}");
 
+        
     }
 }

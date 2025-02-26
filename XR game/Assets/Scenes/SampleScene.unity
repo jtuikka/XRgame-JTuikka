@@ -1523,8 +1523,9 @@ GameObject:
   - component: {fileID: 419011759}
   - component: {fileID: 419011758}
   - component: {fileID: 419011757}
+  - component: {fileID: 419011760}
   m_Layer: 0
-  m_Name: Press
+  m_Name: BlueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1600,13 +1601,13 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 4
-    positionSpring: 0
+    positionSpring: 500
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 50
+    positionSpring: 500
     positionDamper: 10
     maximumForce: 3.4028233e+38
     useAcceleration: 0
@@ -1696,6 +1697,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.072, y: 0.03, z: 0.072}
   m_Center: {x: 0, y: 0.011, z: 0}
+--- !u!114 &419011760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419011755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaacb6ed31cba347afab3ba0862c9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treshold: 0.1
+  deadZone: 0.1
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  teleportManager: {fileID: 1265018091}
 --- !u!1 &489149705 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b836f052f6ec2d4ebfa01b0a7c5ee43, type: 3}
@@ -1913,6 +1935,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!4 &570850167 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 417292597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &602503527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2519,114 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897313544}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &899578732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 899578736}
+  - component: {fileID: 899578735}
+  - component: {fileID: 899578734}
+  - component: {fileID: 899578733}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &899578733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899578732}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &899578734
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899578732}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &899578735
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899578732}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &899578736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899578732}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.079, y: 0.17, z: 4.29}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &923968675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2750,7 @@ GameObject:
   - component: {fileID: 924133777}
   - component: {fileID: 924133780}
   m_Layer: 0
-  m_Name: Press
+  m_Name: RedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2691,13 +2826,13 @@ ConfigurableJoint:
   m_TargetVelocity: {x: 0, y: 0, z: 0}
   m_XDrive:
     serializedVersion: 4
-    positionSpring: 0
+    positionSpring: 500
     positionDamper: 0
     maximumForce: 3.4028233e+38
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 50
+    positionSpring: 500
     positionDamper: 10
     maximumForce: 3.4028233e+38
     useAcceleration: 0
@@ -2800,13 +2935,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treshold: 0.1
-  deadZone: 0.025
+  deadZone: 0.1
   onPressed:
     m_PersistentCalls:
       m_Calls: []
   onReleased:
     m_PersistentCalls:
       m_Calls: []
+  teleportManager: {fileID: 1265018091}
 --- !u!1 &979262896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 202364687, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -3928,6 +4064,7 @@ GameObject:
   - component: {fileID: 1265018089}
   - component: {fileID: 1265018088}
   - component: {fileID: 1265018087}
+  - component: {fileID: 1265018091}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4024,6 +4161,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1265018091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265018086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f6719f00a260043a413e398a3cf6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 570850167}
+  teleportLocation: {fileID: 899578736}
+  correctSequence:
+  - GreenButton
+  - RedButton
+  - BlueButton
 --- !u!1 &1298615438 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5400824682203667988, guid: 6b836f052f6ec2d4ebfa01b0a7c5ee43, type: 3}
@@ -5562,8 +5717,9 @@ GameObject:
   - component: {fileID: 1998693753}
   - component: {fileID: 1998693752}
   - component: {fileID: 1998693751}
+  - component: {fileID: 1998693754}
   m_Layer: 0
-  m_Name: Press
+  m_Name: GreenButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5610,7 +5766,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0.02
+    limit: 0.015
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -5645,7 +5801,7 @@ ConfigurableJoint:
     useAcceleration: 0
   m_YDrive:
     serializedVersion: 4
-    positionSpring: 50
+    positionSpring: 500
     positionDamper: 10
     maximumForce: 3.4028233e+38
     useAcceleration: 0
@@ -5733,8 +5889,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.072, y: 0.03, z: 0.072}
-  m_Center: {x: 0, y: 0.011, z: 0}
+  m_Size: {x: 0.072, y: 0.016, z: 0.072}
+  m_Center: {x: 0, y: 0.015, z: 0}
+--- !u!114 &1998693754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998693749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaacb6ed31cba347afab3ba0862c9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treshold: 0.1
+  deadZone: 0.1
+  onPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  teleportManager: {fileID: 1265018091}
 --- !u!4 &2078321758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6682861210513475885, guid: 72dd77ff50c9ea6468a93e44f5effc65, type: 3}
@@ -5906,3 +6083,4 @@ SceneRoots:
   - {fileID: 857890230}
   - {fileID: 1226893537}
   - {fileID: 528604900}
+  - {fileID: 899578736}
